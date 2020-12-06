@@ -1,1 +1,1 @@
-FLASK_APP=blog.py
+export FLASK_APP=blog.py
