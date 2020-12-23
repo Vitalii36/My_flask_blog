@@ -1,0 +1,179 @@
+# Ukrainian (Ukraine) translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-12-23 23:00+0200\n"
+"PO-Revision-Date: 2020-12-23 22:22+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: uk_UA\n"
+"Language-Team: uk_UA <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/forms.py:11 app/forms.py:18 app/forms.py:37
+msgid "Username"
+msgstr "Логін"
+
+#: app/forms.py:12 app/forms.py:20 app/forms.py:66
+msgid "Password"
+msgstr "Пароль"
+
+#: app/forms.py:13
+msgid "Remember Me"
+msgstr "Нагадай мені"
+
+#: app/forms.py:14 app/routes.py:63 app/templates/login.html:5
+msgid "Sign In"
+msgstr "Вхід"
+
+#: app/forms.py:19 app/forms.py:62
+msgid "Email"
+msgstr "Почта"
+
+#: app/forms.py:22 app/forms.py:68
+msgid "Repeat Password"
+msgstr "Повторити пароль"
+
+#: app/forms.py:23 app/routes.py:83 app/templates/register.html:5
+msgid "Register"
+msgstr "Реєстрація"
+
+#: app/forms.py:28 app/forms.py:49
+msgid "Please use a different username."
+msgstr "Будь ласка, використовуйте інше імя"
+
+#: app/forms.py:33
+msgid "Please use a different email address."
+msgstr "Будь ласка, використовуйте іншу почтову адресу"
+
+#: app/forms.py:38
+msgid "About me"
+msgstr "Про мене"
+
+#: app/forms.py:39 app/forms.py:53 app/forms.py:59
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: app/forms.py:56
+msgid "Say something"
+msgstr "Скажи щось"
+
+#: app/forms.py:63 app/forms.py:69
+msgid "Request Password Reset"
+msgstr "Запит на зміну пароля"
+
+#: app/routes.py:33
+msgid "Your post is now live"
+msgstr "Твій пост вже розміщено"
+
+#: app/routes.py:43
+msgid "Home"
+msgstr "Дім"
+
+#: app/routes.py:56
+msgid "Invalid username or password"
+msgstr "Не правильне імя або пароль"
+
+#: app/routes.py:81
+msgid "Congratulations, you are now a registered user!"
+msgstr "Вітаю, зареєстровані!"
+
+#: app/routes.py:108
+msgid "Your changes have been saved."
+msgstr "Ваші зміни були збережені"
+
+#: app/routes.py:113 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Редагувати профіль"
+
+#: app/routes.py:123 app/routes.py:143
+#, python-format
+msgid "User %(username)s not found."
+msgstr "Користувач %(username)s не знайдений."
+
+#: app/routes.py:126
+msgid "You cannot follow yourself!"
+msgstr "Ви не можете підписатись на собе"
+
+#: app/routes.py:130 app/routes.py:150
+msgid "You are following %(username)!"
+msgstr "Ви слідкуєте за %(username)!"
+
+#: app/routes.py:146
+msgid "You cannot unfollow yourself!"
+msgstr "Ви не можете підписатись на собе"
+
+#: app/routes.py:165
+msgid "Explore"
+msgstr "Дослідження"
+
+#: app/routes.py:177
+msgid "Check your email for the instructions to reset your password"
+msgstr "Перевірте свою почту, там інструкція по зміні паролю"
+
+#: app/routes.py:180 app/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Змінити пароль"
+
+#: app/routes.py:193
+msgid "Your password has been reset."
+msgstr "Ваш пароль було змінено"
+
+#: app/templates/404.html:4
+msgid "File Not Found"
+msgstr "Файл не знайдено"
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Сталась не очікована помилка"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Адміністратора повідомлено. Вибачте за незручності"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s написав %(when)s"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Привіт, %(username)s!"
+
+#: app/templates/login.html:12
+msgid "New User?"
+msgstr "Новий користувач?"
+
+#: app/templates/login.html:12
+msgid "Click to Register!"
+msgstr "Натисніть для регістрації"
+
+#: app/templates/login.html:14
+msgid "Forgot Your Password?"
+msgstr "Забули свій пароль?"
+
+#: app/templates/login.html:15
+msgid "Click to Reset It"
+msgstr "Натисніть для щоб змінити його"
+
+#: app/templates/user.html:9
+msgid "User"
+msgstr "Користувач"
+
+#: app/templates/user.html:30
+msgid "Last seen on"
+msgstr "Остання присутність"
+
+#~ msgid "User %(username)"
+#~ msgstr "Користувач %(username)"
+
