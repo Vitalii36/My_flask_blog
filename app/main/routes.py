@@ -134,7 +134,7 @@ def unfollow(username):
         return redirect(url_for('main.index'))
 
 
-@app.route('/favicon.ico')
+@bp.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
                                'favicon.ico', mimetype='image/png')
