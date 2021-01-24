@@ -133,6 +133,11 @@ def unfollow(username):
     else:
         return redirect(url_for('main.index'))
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
+                               'favicon.ico', mimetype='image/png')
 #
 # @bp.route('/translate', methods=['POST'])
 # @login_required
