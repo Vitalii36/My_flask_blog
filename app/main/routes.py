@@ -137,7 +137,7 @@ def unfollow(username):
 
 @bp.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
+    return send_from_directory(os.path.join(bp.root_path, 'static', 'images'),
                                'favicon.ico', mimetype='image/png')
 #
 # @bp.route('/translate', methods=['POST'])
