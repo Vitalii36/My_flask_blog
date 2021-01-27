@@ -184,6 +184,12 @@ def notifications():
         'data': n.get_data(),
         'timestamp': n.timestamp
     } for n in notifications])
+
+@bp.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(bp.root_path, 'static', 'images'),
+                               'favicon.ico', mimetype='image/png')
+
 #
 # @bp.route('/translate', methods=['POST'])
 # @login_required
