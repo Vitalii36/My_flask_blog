@@ -19,6 +19,14 @@ def before_request():
     g.locale = str(get_locale())
 
 
+@bp.url_defaults
+def add_language_code(endpoint, values):
+    values.setdefault('lang_code', g.locale)
+
+@bp.url_value_preprocessor
+def pull_lang_code(endpoint, values):
+    g.locale = values.pop('lang_code')
+
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
 @login_required
@@ -49,6 +57,8 @@ def index():
 @bp.route('/explore')
 @login_required
 def explore():
+    g.lang_code = 'en'
+    refresh()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
@@ -184,6 +194,12 @@ def notifications():
         'data': n.get_data(),
         'timestamp': n.timestamp
     } for n in notifications])
+
+# @bp.route('/cake')
+# def cake():
+#     g.lang_code = 'en'
+#     refresh()
+#     return render_template('multilingual/cake.html', title=_('The Cake is a Lie'))
 #
 # @bp.route('/translate', methods=['POST'])
 # @login_required
