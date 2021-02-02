@@ -84,14 +84,8 @@ def create_app(config_class=Config):
     return app
 
 
-# @babel.localeselector
-# def get_locale():
-#     return request.accept_languages.best_match(current_app.config['LANGUAGES'])
-
 @babel.localeselector
 def get_locale():
-    if not g.get('lang_code', None):
-        g.locale = request.accept_languages.best_match(Config.LANGUAGES)
-    return g.locale
+    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
 
 from app import models
