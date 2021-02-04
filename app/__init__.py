@@ -1,5 +1,7 @@
 import logging
+
 from logging.handlers import SMTPHandler, RotatingFileHandler
+
 import os
 from flask import Flask, request, current_app, g
 from flask_sqlalchemy import SQLAlchemy
@@ -10,6 +12,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from config import Config
+
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -34,6 +37,9 @@ def create_app(config_class=Config):
     moment.init_app(app)
     babel.init_app(app)
 
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
 
@@ -43,8 +49,6 @@ def create_app(config_class=Config):
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-    from app.api import bp as api_bp
-    app.register_blueprint(api_bp, url_prefix='/api')
 
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
