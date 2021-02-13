@@ -1,4 +1,4 @@
-2021-02-13 20:24:18,270 ERROR: Exception on /auth/register [POST] [in /home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2021-02-13 20:22:06,733 ERROR: Exception on /auth/login [POST] [in /home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
     self.dialect.do_execute(
@@ -37,20 +37,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ubuntu/app_flask/My_flask_blog/app/auth/routes.py", line 42, in register
-    if form.validate_on_submit():
-  File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/wtforms/form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/wtforms/form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 204, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
-    validator(form, self)
-  File "/home/ubuntu/app_flask/My_flask_blog/app/auth/forms.py", line 25, in validate_username
-    user = User.query.filter_by(username=username.data).first()
+  File "/home/ubuntu/app_flask/My_flask_blog/app/auth/routes.py", line 19, in login
+    user = User.query.filter_by(username=form.username.data).first()
   File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3429, in first
     ret = list(self[0:1])
   File "/home/ubuntu/app_flask/My_flask_blog/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
