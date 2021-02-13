@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request, g, \
     jsonify, current_app
@@ -16,7 +17,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
-    g.locale = str(get_locale())
+    g.locale = 'uk_UA' #str(get_locale())
 
 
 @bp.route('/', methods=['GET', 'POST'])
@@ -133,12 +134,14 @@ def unfollow(username):
     else:
         return redirect(url_for('main.index'))
 
+
 @bp.route('/user/<username>/popup')
 @login_required
 def user_popup(username):
     user = User.query.filter_by(username=username).first_or_404()
     form = EmptyForm()
     return render_template('user_popup.html', user=user, form=form)
+
 
 @bp.route('/send_message/<recipient>', methods=['GET', 'POST'])
 @login_required
@@ -155,6 +158,7 @@ def send_message(recipient):
         return redirect(url_for('main.user', username=recipient))
     return render_template('send_message.html', title=_('Send Message'),
                            form=form, recipient=recipient)
+
 
 @bp.route('/messages')
 @login_required
@@ -173,6 +177,7 @@ def messages():
     return render_template('messages.html', messages=messages.items,
                            next_url=next_url, prev_url=prev_url)
 
+
 @bp.route('/notifications')
 @login_required
 def notifications():
@@ -184,16 +189,3 @@ def notifications():
         'data': n.get_data(),
         'timestamp': n.timestamp
     } for n in notifications])
-
-@bp.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(bp.root_path, 'static', 'images'),
-                               'favicon.ico', mimetype='image/png')
-
-#
-# @bp.route('/translate', methods=['POST'])
-# @login_required
-# def translate_text():
-#     return jsonify({'text': translate(request.form['text'],
-#                                       request.form['source_language'],
-#                                       request.form['dest_language'])})
