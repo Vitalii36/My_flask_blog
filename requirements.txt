@@ -63,7 +63,6 @@ pexpect==4.6.0
 Pillow==7.0.0
 protobuf==3.6.1
 psutil==5.5.1
-psycopg2==2.8.5
 ptyprocess==0.7.0
 pyasn1==0.4.2
 pycparser==2.20
