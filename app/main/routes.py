@@ -17,7 +17,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
-    g.locale = 'uk_UA' #str(get_locale())
+    g.locale = str(get_locale()) # uk_UA
 
 
 @bp.route('/', methods=['GET', 'POST'])
