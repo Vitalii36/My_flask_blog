@@ -13,6 +13,8 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from config import Config
 
+import pymysql
+pymysql.install_as_MySQLdb()
 
 db = SQLAlchemy()
 migrate = Migrate()
